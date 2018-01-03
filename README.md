@@ -2,39 +2,6 @@
 <html>
 <head>
 <title>Conformalized MCF</title>
-<SCRIPT TYPE="text/javascript">
-<!--
-function $()
-{
-	var elements = new Array();
-	for( var i=0 ; i<arguments.length ; i++ )
-	{
-		var element = arguments[i];
-		if( typeof element == 'string' ) element = document.getElementById( element );
-		elements.push(element);
-	}
-	return elements;
-};
-function collapseAll( objs )
-{
-	for( var i=0 ; i<objs.length ; i++ ) objs[i].style.display = 'none';
-};
-function expandAll( objs )
-{
-	for( var i=0 ; i<objs.length ; i++ ) objs[i].style.display = '';
-};
-function toggleAll( objs )
-{
-	for( var i=0 ; i<objs.length ; i++ )
-		if( objs[i].style.display =='' ) objs[i].style.display = 'none';
-		else                             objs[i].style.display = '';
-};
-function _init( )
-{
-	collapseAll( $('conformalized_mcf','conformalized_mcf_orbifold_visualization') );
-};
-//-->
-</SCRIPT>
 </head>
 <body ONLOAD="_init();">
 <CENTER><H1>Can Mean-Curvature Flow be Modified to be Non-singular?<BR> (Version 2.0)</A></H1></CENTER>
@@ -56,9 +23,7 @@ function _init( )
 
 <UL>
 <DL>
-<FONT SIZE="+1" ><B><A HREF="" ONCLICK="toggleAll( $('conformalized_mcf') ) ; return false;" >ConformalizedMCF</A></B></FONT>
-<DIV ID="conformalized_mcf">
-
+<FONT SIZE="+1" ><B>ConformalizedMCF</B></FONT>
 <DT><b>--in</b> &#60;<i>input mesh</i>&#62;
 <DD> This string is the name of the file containing the triangulated model.
 It is assumed that the file is in the
@@ -83,14 +48,12 @@ If not argument is specified, a default value of 0.0001 is used.
 <DT> [<B>--verbose</B>]
 <DD> It this flag is specified error measures are computed at each step of the evolution and output to STDOUT.
 
-</DIV>
 </DL>
 </UL>
 
 <UL>
 <DL>
-<FONT SIZE="+1" ><B><A HREF="" ONCLICK="toggleAll( $('conformalized_mcf_orbifold_visualization') ) ; return false;" >ConformalizedMCFOrbifoldVisualization</A></B></FONT>
-<DIV ID="conformalized_mcf_orbifold_visualization">
+<FONT SIZE="+1" ><B>ConformalizedMCFOrbifoldVisualization</B></FONT>
 
 <DT><b>--in</b> &#60;<i>input mesh</i>&#62;
 <DD> This string is the name of the file containing the triangulated model.
@@ -115,7 +78,6 @@ If not argument is specified, a default value of 1.0 is used.
 <DT> [<B>--verbose</B>]
 <DD> It this flag is specified error measures are computed at each step of the evolution and output to STDOUT.
 
-</DIV>
 </DL>
 </UL>
 
