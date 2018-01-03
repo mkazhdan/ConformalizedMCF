@@ -1,0 +1,119 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConformalizedMCF", "ConformalizedMCF\ConformalizedMCF.vcxproj", "{4CC3F695-40DD-4772-948E-A1202981BDCF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConformalizedMCFOrbifoldVisualization", "ConformalizedMCFOrbifoldVisualization\ConformalizedMCFOrbifoldVisualization.vcxproj", "{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC} = {B5899B32-FAC2-477E-99AA-86736B97F2FC}
+		{0BE55595-4080-4265-82AF-51108EC956B2} = {0BE55595-4080-4265-82AF-51108EC956B2}
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647} = {D3D173AB-D306-4179-BEC4-95CE1B14E647}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JPEG", "JPEG\JPEG.vcxproj", "{0BE55595-4080-4265-82AF-51108EC956B2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PNG", "PNG\PNG.vcxproj", "{B5899B32-FAC2-477E-99AA-86736B97F2FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZLIB", "ZLIB\ZLIB.vcxproj", "{D3D173AB-D306-4179-BEC4-95CE1B14E647}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{CEB845B2-2DFA-46B0-8ABD-19D0DDCAA944}"
+	ProjectSection(SolutionItems) = preProject
+		Library\Algebra.h = Library\Algebra.h
+		Library\Array.h = Library\Array.h
+		Library\Array.inl = Library\Array.inl
+		Library\Camera.h = Library\Camera.h
+		Library\CmdLineParser.h = Library\CmdLineParser.h
+		Library\CmdLineParser.inl = Library\CmdLineParser.inl
+		Library\Factor.h = Library\Factor.h
+		Library\Factor.inl = Library\Factor.inl
+		Library\Geometry.h = Library\Geometry.h
+		Library\Geometry.inl = Library\Geometry.inl
+		Library\Grid.h = Library\Grid.h
+		Library\Grid.inl = Library\Grid.inl
+		Library\HalfEdge.h = Library\HalfEdge.h
+		Library\HalfEdge.inl = Library\HalfEdge.inl
+		Library\HalfedgeDictionary.hh = Library\HalfedgeDictionary.hh
+		Library\Image.h = Library\Image.h
+		Library\JPEG.h = Library\JPEG.h
+		Library\JPEG.inl = Library\JPEG.inl
+		Library\LinearSolvers.h = Library\LinearSolvers.h
+		Library\MemoryUsage.h = Library\MemoryUsage.h
+		Library\MeshStuff.h = Library\MeshStuff.h
+		Library\Ply.h = Library\Ply.h
+		Library\Ply.inl = Library\Ply.inl
+		Library\PlyFile.h = Library\PlyFile.h
+		Library\PlyFile.inl = Library\PlyFile.inl
+		Library\PNG.h = Library\PNG.h
+		Library\PNG.inl = Library\PNG.inl
+		Library\Polynomial.h = Library\Polynomial.h
+		Library\Polynomial.inl = Library\Polynomial.inl
+		Library\PPolynomial.h = Library\PPolynomial.h
+		Library\PPolynomial.inl = Library\PPolynomial.inl
+		Library\SparseMatrix.h = Library\SparseMatrix.h
+		Library\SparseMatrix.inl = Library\SparseMatrix.inl
+		Library\SparseMatrixInterface.h = Library\SparseMatrixInterface.h
+		Library\SparseMatrixInterface.inl = Library\SparseMatrixInterface.inl
+		Library\Timer.h = Library\Timer.h
+		Library\Vector.h = Library\Vector.h
+		Library\Vector.inl = Library\Vector.inl
+		Library\Visualization.h = Library\Visualization.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Debug|Win32.Build.0 = Debug|Win32
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Debug|x64.ActiveCfg = Debug|x64
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Debug|x64.Build.0 = Debug|x64
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Release|Win32.ActiveCfg = Release|Win32
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Release|Win32.Build.0 = Release|Win32
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Release|x64.ActiveCfg = Release|x64
+		{4CC3F695-40DD-4772-948E-A1202981BDCF}.Release|x64.Build.0 = Release|x64
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Debug|Win32.Build.0 = Debug|Win32
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Debug|x64.ActiveCfg = Debug|x64
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Debug|x64.Build.0 = Debug|x64
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Release|Win32.ActiveCfg = Release|Win32
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Release|Win32.Build.0 = Release|Win32
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Release|x64.ActiveCfg = Release|x64
+		{3DFEBCBF-B0B1-4556-A5DC-5458E400E445}.Release|x64.Build.0 = Release|x64
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Debug|Win32.Build.0 = Debug|Win32
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Debug|x64.ActiveCfg = Debug|x64
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Debug|x64.Build.0 = Debug|x64
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Release|Win32.ActiveCfg = Release|Win32
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Release|Win32.Build.0 = Release|Win32
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Release|x64.ActiveCfg = Release|x64
+		{0BE55595-4080-4265-82AF-51108EC956B2}.Release|x64.Build.0 = Release|x64
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Debug|Win32.Build.0 = Debug|Win32
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Debug|x64.ActiveCfg = Debug|x64
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Debug|x64.Build.0 = Debug|x64
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Release|Win32.ActiveCfg = Release|Win32
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Release|Win32.Build.0 = Release|Win32
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Release|x64.ActiveCfg = Release|x64
+		{B5899B32-FAC2-477E-99AA-86736B97F2FC}.Release|x64.Build.0 = Release|x64
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Debug|Win32.Build.0 = Debug|Win32
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Debug|x64.ActiveCfg = Debug|x64
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Debug|x64.Build.0 = Debug|x64
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Release|Win32.ActiveCfg = Release|Win32
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Release|Win32.Build.0 = Release|Win32
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Release|x64.ActiveCfg = Release|x64
+		{D3D173AB-D306-4179-BEC4-95CE1B14E647}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8109B77D-5655-4AF4-B2DF-7882B65931AA}
+	EndGlobalSection
+EndGlobal
