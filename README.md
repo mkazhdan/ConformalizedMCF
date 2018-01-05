@@ -84,7 +84,7 @@ If not argument is specified, a default value of 1.0 is used.
 
 <HR>
 <A NAME="COMPILING"><B>SOURCE CODE COMPILATION</B></A><br>
-The source code requires the use of a numerical solver. Be default, the <A HREF="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</A> solver is used. As the default implementation may be a bit slow, the code supports other solvers. Specifically, if you have the <A HREF="https://software.intel.com/en-us/mkl">Intel Math Kernel Library</A> installed, you define <B>EIGEN_USE_MKL_ALL</B> to use a faster solver. Alternatively, if you have the <A HREF="http://www.cise.ufl.edu/research/sparse/cholmod/">CHOLMOD</A> library installed, you can use that by defineing <B>USE_CHOLMOD</B> (and also <B>USE_SUITESPARSE</B> if you are using the <A HREF="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</A> version).
+The source code requires the use of a numerical solver. By default, the <A HREF="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</A> solver is used. As the default implementation may be slow, the code supports other solvers. Specifically, if you have the <A HREF="https://software.intel.com/en-us/mkl">Intel Math Kernel Library</A> installed, you can define <B>EIGEN_USE_MKL_ALL</B> to use a faster solver. Alternatively, if you have the <A HREF="http://www.cise.ufl.edu/research/sparse/cholmod/">CHOLMOD</A> library installed, you can use that by defineing <B>USE_CHOLMOD</B> (and also <B>USE_SUITESPARSE</B> if you are using the <A HREF="http://faculty.cse.tamu.edu/davis/suitesparse.html">SuiteSparse</A> version).
 
 <HR>
 <A NAME="CHANGES"><B>CHANGES</B></A><br>
