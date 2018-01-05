@@ -25,7 +25,7 @@ DL{ margin: 0px 0; }
 
 <ul style="list-style: none;">
 	<li><font size="+1"><b>ConformalizedMCF</b></font>
-		<ul style="list-style: none;">
+		<UL>
 			<li>
 				<DL>
 					<DT><U>Command line arguments</U>
@@ -33,7 +33,7 @@ DL{ margin: 0px 0; }
 					<dl>
 						<dt><b>--in</b> &lt;<i>input mesh</i>&gt;
 						<dd> This string is the name of the file containing the triangulated model.
-						It is assumed that the file is in the <a href="http://www.cc.gatech.edu/projects/large_models/ply.html">PLY</a> format and the file-name ends with a ".ply" extension.</DD>
+						It is assumed that the file is in the <a href="http://www.cc.gatech.edu/projects/large_models/ply.html">PLY</a> format and the file-name ends with a ".ply" extension.
 
 						<dt>[<b>--flow</b> &lt;<i>type of surface flow</i>]&gt;
 						<dd> This argument specifies the type of flow used to evolve the surface. "<b>1</b>" corresponds to traditional mean-curvature flow. "<b>2</b>" corresponds to the conformalized mean-curvature flow. And "<b>3</b>" corresponds to heat flow.<br>
@@ -58,7 +58,7 @@ DL{ margin: 0px 0; }
 		</UL>
 
    <li><font size="+1"><b>ConformalizedMCFOrbifoldVisualization</b></font>
-		<ul style="list-style: none;">
+		<UL>
 			<li>
 				<DL>
 					<DT><U>Command line arguments</U>
