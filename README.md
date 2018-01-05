@@ -1,6 +1,8 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Conformalized MCF</title>
 <STYLE>
+DL{ margin: 0px 0; }
+UL{ list-style: none;}
 </STYLE>
 </head>
 <body onload="_init();">
@@ -22,9 +24,9 @@
 <hr>
 <a name="EXECUTABLES"><b>EXECUTABLES</b></a><br>
 
-<ul style="list-style: none;">
+<UL>
 	<li><font size="+1"><b>ConformalizedMCF</b></font>
-		<UL style="list-style: none;">
+		<UL>
 			<li>
 				<DL>
 					<DT><U>Command line arguments</U>
@@ -57,7 +59,7 @@
 		</UL>
 
    <li><font size="+1"><b>ConformalizedMCFOrbifoldVisualization</b></font>
-		<UL style="list-style: none;">
+		<UL>
 			<li>
 				<DL>
 					<DT><U>Command line arguments</U>
