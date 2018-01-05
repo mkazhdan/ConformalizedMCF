@@ -35,7 +35,6 @@ UL{ list-style: none;}
 						<dt><b>--in</b> &lt;<i>input mesh</i>&gt;
 						<dd> This string is the name of the file containing the triangulated model.
 						It is assumed that the file is in the <a href="http://www.cc.gatech.edu/projects/large_models/ply.html">PLY</a> format and the file-name ends with a ".ply" extension.
-
 						<dt>[<b>--flow</b> &lt;<i>type of surface flow</i>]&gt;
 						<dd> This argument specifies the type of flow used to evolve the surface. "<b>1</b>" corresponds to traditional mean-curvature flow. "<b>2</b>" corresponds to the conformalized mean-curvature flow. And "<b>3</b>" corresponds to heat flow.<br>
 						If no value specified, a default value of "<b>2</b>" is used.
