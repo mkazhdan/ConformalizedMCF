@@ -58,8 +58,9 @@ static inline void gets( char* str , int strLen ){ fgets( str , strLen , stdin )
 cmdLineParameter< char* > In( "in" ) , Symmetry( "sym" );
 cmdLineParameter< int > Threads( "threads" , omp_get_num_procs() );
 cmdLineParameter< float > StepSize( "stepSize" , 1.f );
+cmdLineSequence< int > Cones( "cones" );
 cmdLineReadable  Verbose( "verbose" ) , Simple( "simple" );
-cmdLineReadable* params[] = { &In , &StepSize , &Threads , &Symmetry , &Verbose , &Simple , NULL };
+cmdLineReadable* params[] = { &In , &StepSize , &Threads , &Symmetry , &Verbose , &Simple , &Cones , NULL };
 
 void Usage( const char* ex )
 {
@@ -72,6 +73,7 @@ void Usage( const char* ex )
 	printf( "\t\tO:     Octahedral symmetry\n" );
 	printf( "\t\tI:    Icosahedral symmetry\n" );
 	printf( "\t[--%s <step size>=%f]\n" , StepSize.name , StepSize.value );
+	printf( "\t[--%s <source> or <start:end> or <start:source:end>\n" , Cones.name );
 	printf( "\t[--%s]\n" , Simple.name );
 	printf( "\t[--%s]\n" , Verbose.name );
 }
@@ -351,19 +353,34 @@ int main
 		}
 		else
 		{
-			int source = rand() % oMesh.vertices.size() , midIndex;
-
-			std::vector< DijkstraVertex > dVerts = RunDijkstra( oMesh.triangles , oMesh.vertices , source );
-			int target1 , target2;
-			double maxValue = 0;
-			for( int i=0 ; i<dVerts.size() ; i++ ) if( dVerts[i].dist>maxValue ) maxValue = dVerts[i].dist , target1 = i;
+			int source , midIndex;
+			if( Cones.count==0 || Cones.count==1 || Cones.count==3 )
 			{
-				std::vector< DijkstraVertex > _dVerts = RunDijkstra( oMesh.triangles , oMesh.vertices , target1 );
-				double maxValue = 0;
-				for( int i=0 ; i<dVerts.size() ; i++ ) if( _dVerts[i].dist>maxValue ) maxValue = dVerts[i].dist , target2 = i;
-			}
+				int target1 , target2;
+				// Get the source
+				switch( Cones.count )
+				{
+					case 0: source = rand() % oMesh.vertices.size() ; break;
+					case 1: source = Cones.values[0]                ; break;
+					case 3: source = Cones.values[1]                ; break;
+					default: fprintf( stderr , "[ERROR] Should not be here\n" );
+				}
+				if( source<0 || source>=oMesh.vertices.size() ) fprintf( stderr , "[ERROR] Soure index out of bounds: %d < %d\n" , source , (int)oMesh.vertices.size() ) , exit( 0 );
+				std::vector< DijkstraVertex > dVerts = RunDijkstra( oMesh.triangles , oMesh.vertices , source );
 
-			{
+				// If the end-points are not given, compute them
+				if( Cones.count!=3 )
+				{
+					double maxValue = 0;
+					for( int i=0 ; i<dVerts.size() ; i++ ) if( dVerts[i].dist>maxValue ) maxValue = dVerts[i].dist , target1 = i;
+					{
+						std::vector< DijkstraVertex > _dVerts = RunDijkstra( oMesh.triangles , oMesh.vertices , target1 );
+						double maxValue = 0;
+						for( int i=0 ; i<dVerts.size() ; i++ ) if( _dVerts[i].dist>maxValue ) maxValue = dVerts[i].dist , target2 = i;
+					}
+				}
+
+				// Generate the shortest paths from the source to the end-points and create the seam
 				std::vector< unsigned int > _seam;
 
 				seam.push_back( target1 );
@@ -375,6 +392,16 @@ int main
 				midIndex = (int)seam.size()-1;
 				for( int i=(int)_seam.size()-2 ; i>=0 ; i-- ) seam.push_back( _seam[i] );
 			}
+			else if( Cones.count==2 )
+			{
+				int target1 = Cones.values[0] , target2 = Cones.values[1];
+				std::vector< DijkstraVertex > dVerts = RunDijkstra( oMesh.triangles , oMesh.vertices , target1 );
+				seam.push_back( target2 );
+				while( dVerts[ target2 ].prev!=-1 ){ target2 = dVerts[target2].prev ; seam.push_back( target2 ); }
+				midIndex = (int)seam.size()/2;
+				source = seam[ midIndex ];
+			}
+			else fprintf( stderr , "[ERROR] Expected beteween 1 and 3 cones\n" ) , exit( 0 );
 
 			if( !symmetryType==SYMMETRY_CYCLIC || symmetryOrder>1 || !Simple.set ) oMesh.split( seam );
 			if( symmetryType==SYMMETRY_CYCLIC )

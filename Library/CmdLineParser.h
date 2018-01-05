@@ -100,7 +100,7 @@ public:
 	int count;
 	Type* values;
 	char separator;
-	cmdLineSequence( const char* name , char separator=';' );
+	cmdLineSequence( const char* name , char separator=':' );
 	~cmdLineSequence( void );
 	int read( char** argv , int argc );
 	void writeValue( char* str ) const;
