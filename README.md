@@ -38,19 +38,15 @@ UL{ list-style: none;}
 						<dt>[<b>--flow</b> &lt;<i>type of surface flow</i>]&gt;
 						<dd> This argument specifies the type of flow used to evolve the surface. "<b>1</b>" corresponds to traditional mean-curvature flow. "<b>2</b>" corresponds to the conformalized mean-curvature flow. And "<b>3</b>" corresponds to heat flow.<br>
 						If no value specified, a default value of "<b>2</b>" is used.
-
 						<dt>[<b>--outHeader</b> &lt;<i>output file headers</i>&gt;]
 						<dd> This string specifies the header for the filenames used when outputting the evolving surface throughout the course of the flow.<br>
 						If no argument is specified, no output files are generated.
-
 						<dt>[<b>--steps</b> &lt;<i>number of steps of evolution to be performed</i>&gt;]
 						<dd> This argument specifies the number of anisotropy normalizations that are to be preformed. The parameter for this argument is specified as either <i>start:increment:end</i>, <i>start:end</i>, or <i>start</i> where <i>start</i> is the first evolution step at which files are output, <i>end</i> is the number of evolution steps performed, and <i>increment</i> is the number of evolution steps between file outputs. If <i>increment</i> is not set, a default value of 1 is used. If <i>end</i> is not set, the value is set to <i>start</i>.<br>
 						If no argument is specified, no evolution is performed.
-
 						<dt>[<b>--stepSize</b> &lt;<i>temporal discretization</i>&gt;]
 						<dd> This argument specifies the size of the temporal discretization (with smaller values resulting in slower flows and larger values resulting in faster ones).<br>
 						If not argument is specified, a default value of 0.0001 is used.
-
 						<dt> [<b>--verbose</b>]
 						<dd> It this flag is specified error measures are computed at each step of the evolution and output to STDOUT.
 					</DL>
@@ -68,7 +64,6 @@ UL{ list-style: none;}
 						</dt><dd> This string is the name of the file containing the triangulated model.
 						It is assumed that the file is in the <a href="http://www.cc.gatech.edu/projects/large_models/ply.html">PLY</a> format and the file-name ends with a ".ply" extension.<br>
 						The model must have either disk or sphere topology.
-
 						<dt>[<b>--sym</b> &lt;<i>type of orbifold symmetry</i>]&gt;
 						<dd> This argument specifies the type of orbifold symmetry to be used. Options are:
 						<ul>
@@ -79,11 +74,9 @@ UL{ list-style: none;}
 							<li> <b>I</b>: Icosahedral symmetry group
 						</ul>
 						If no value specified, a default value of "<b>C1</b>" is used.
-
 						<dt>[<b>--stepSize</b> &lt;<i>temporal discretization</i>&gt;]
 						<dd> This argument specifies the size of the temporal discretization (with smaller values resulting in slower flows and larger values resulting in faster ones).<br>
 						If not argument is specified, a default value of 1.0 is used.
-
 						<dt> [<b>--verbose</b>]
 						<dd> It this flag is specified error measures are computed at each step of the evolution and output to STDOUT.
 					</dl>					
