@@ -458,7 +458,7 @@ int main
 
 	char windowName[512];
 	if     ( symmetryType==SYMMETRY_CYCLIC      ) sprintf( windowName , "Orbifold CMCF (Cyclic): %d" , symmetryOrder );
-	else if( symmetryType==SYMMETRY_DIHEDRAL    ) sprintf( windowName , "Orbifold CMCF (Dihedral): 2*%d" , symmetryType );
+	else if( symmetryType==SYMMETRY_DIHEDRAL    ) sprintf( windowName , "Orbifold CMCF (Dihedral): 2*%d" , symmetryOrder );
 	else if( symmetryType==SYMMETRY_TETRAHEDRAL ) sprintf( windowName , "Orbifold CMCF (Tetrahedral)" );
 	else if( symmetryType==SYMMETRY_OCTAHEDRAL  ) sprintf( windowName , "Orbifold CMCF (Octahedral)" );
 	else if( symmetryType==SYMMETRY_ICOSAHEDRAL ) sprintf( windowName , "Orbifold CMCF (Icosahedral)" );
