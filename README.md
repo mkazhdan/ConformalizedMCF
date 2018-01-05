@@ -1,7 +1,6 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Conformalized MCF</title>
 <STYLE>
-DL{ margin: 0px 0; }
 </STYLE>
 </head>
 <body onload="_init();">
@@ -25,12 +24,12 @@ DL{ margin: 0px 0; }
 
 <ul style="list-style: none;">
 	<li><font size="+1"><b>ConformalizedMCF</b></font>
-		<UL>
+		<UL style="list-style: none;">
 			<li>
 				<DL>
 					<DT><U>Command line arguments</U>
 					<DD>
-					<dl>
+					<DL>
 						<dt><b>--in</b> &lt;<i>input mesh</i>&gt;
 						<dd> This string is the name of the file containing the triangulated model.
 						It is assumed that the file is in the <a href="http://www.cc.gatech.edu/projects/large_models/ply.html">PLY</a> format and the file-name ends with a ".ply" extension.
@@ -53,12 +52,12 @@ DL{ margin: 0px 0; }
 
 						<dt> [<b>--verbose</b>]
 						<dd> It this flag is specified error measures are computed at each step of the evolution and output to STDOUT.
-					</dl>
+					</DL>
 			</DL>
 		</UL>
 
    <li><font size="+1"><b>ConformalizedMCFOrbifoldVisualization</b></font>
-		<UL>
+		<UL style="list-style: none;">
 			<li>
 				<DL>
 					<DT><U>Command line arguments</U>
