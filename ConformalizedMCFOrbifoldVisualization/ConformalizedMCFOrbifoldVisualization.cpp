@@ -367,7 +367,6 @@ int main
 				}
 				if( source<0 || source>=oMesh.vertices.size() ) fprintf( stderr , "[ERROR] Soure index out of bounds: %d < %d\n" , source , (int)oMesh.vertices.size() ) , exit( 0 );
 				std::vector< DijkstraVertex > dVerts = RunDijkstra( oMesh.triangles , oMesh.vertices , source );
-
 				// If the end-points are not given, compute them
 				if( Cones.count!=3 )
 				{
@@ -379,6 +378,7 @@ int main
 						for( int i=0 ; i<dVerts.size() ; i++ ) if( _dVerts[i].dist>maxValue ) maxValue = dVerts[i].dist , target2 = i;
 					}
 				}
+				else target1 = Cones.values[0] , target2 = Cones.values[2];
 
 				// Generate the shortest paths from the source to the end-points and create the seam
 				std::vector< unsigned int > _seam;
