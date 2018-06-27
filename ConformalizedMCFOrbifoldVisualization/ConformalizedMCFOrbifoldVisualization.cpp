@@ -31,7 +31,7 @@ DAMAGE.
 #undef USE_SUITESPARSE
 
 #define USE_EIGEN
-#undef EIGEN_USE_MKL_ALL
+#define EIGEN_USE_MKL_ALL
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -236,7 +236,6 @@ int main
 		oMesh.vInfo.resize( oMesh.vertices.size() );
 		bool hasColor = ( propertyFlags[3] || propertyFlags[6] ) && ( propertyFlags[4] || propertyFlags[7] ) && ( propertyFlags[5] || propertyFlags[8] );
 		if( !hasColor ) SetNormalColors( oMesh.triangles , oMesh.vertices );
-
 	}
 
 	// Center at the origin
@@ -402,7 +401,6 @@ int main
 				source = seam[ midIndex ];
 			}
 			else fprintf( stderr , "[ERROR] Expected beteween 1 and 3 cones\n" ) , exit( 0 );
-
 			if( !symmetryType==SYMMETRY_CYCLIC || symmetryOrder>1 || !Simple.set ) oMesh.split( seam );
 			if( symmetryType==SYMMETRY_CYCLIC )
 			{
@@ -454,6 +452,7 @@ int main
 			}
 		}
 	}
+
 	vData->init( oMesh );
 
 	char windowName[512];

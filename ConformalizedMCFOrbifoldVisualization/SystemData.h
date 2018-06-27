@@ -343,7 +343,7 @@ public:
 
 
 			if( !solver ) solver = new Solver( M );
-			solver->update( M );
+			else          solver->update( M );
 #pragma omp parallel for
 			for( int j=0 ; j<tileMesh.vertices.size() ; j++ ) oldPositions[j] = tileMesh.vertices[j];
 
